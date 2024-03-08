@@ -1,7 +1,6 @@
 package tests.payments;
 
 import data.RunTags;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -18,14 +17,10 @@ public class PaymentsTest extends TestBase {
     private static final String VALID_IBAN = "GB94BARC10201530093459",
             INVALID_IBAN = "GB94BARC20201530093459";
 
-    @BeforeEach
-    void openPaymentPageByUrl() {
-        paymentsPage.openPaymentPage();
-    }
-
     @Test
     @DisplayName("Check invalid IBAN check error note is displayed")
     public void checkIbanIsNotValidTest() {
+        step("Open payments page by Url", paymentsPage::openPaymentPage);
         step("Set invalid IBAN number and press 'Check' button", () ->
                 paymentsPage.setIbanNumber(INVALID_IBAN).clickCheckButton());
         step("Check error note is displayed", () ->
@@ -35,6 +30,7 @@ public class PaymentsTest extends TestBase {
     @Test
     @DisplayName("Check valid IBAN check success note is displayed")
     public void checkIbanIsValidTest() {
+        step("Open payments page by Url", paymentsPage::openPaymentPage);
         step("Set valid IBAN number and press 'Check' button", () ->
                 paymentsPage.setIbanNumber(VALID_IBAN)).clickCheckButton();
         step("Check success note is displayed", () ->
