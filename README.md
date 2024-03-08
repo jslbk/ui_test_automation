@@ -1,9 +1,9 @@
 # Demo automation tests for the [BluOr Bank's](https://www.bluorbank.lv/) web application
 
 
-<img alt="BluOr Bank" src="media/logos/bob_logo.png" width="50%">
+<img alt="BluOr Bank" src="media/logos/bob_logo.png" width="60%">
 
-## Content:
+## 📂 Content:
 
 - <a href="#tools"> Tools</a>
 - <a href="#cases"> Test Cases</a>
@@ -17,7 +17,7 @@
 
 ____
 <a id="tools"></a>
-## Tools
+## 🛠 Tools
 
 <p align="center">
 <a href="https://www.java.com/"><img width="6%" title="Java" src="media/icons/Java.svg"></a>
@@ -76,7 +76,7 @@ To run the automated tests on Selenoid:
 ```bash
 gradle clean test -Denv='remote'  
 ```
->**Note:** The following method will run the tests with the following default parameters:
+>The following method will run the tests with the following default parameters:
 >+ Remote Url: **selenoid.autotests.cloud**
 >+ Browser: **Google Chrome**
 >+ Browser version: **100.0**
