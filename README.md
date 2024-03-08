@@ -33,9 +33,10 @@ ____
 </p>
 
 ____
-Tests are implemented in [Java](https://www.java.com/) using the [Selenide](https://selenide.org/) framework, with [Gradle](https://gradle.org/) serving as the build tool. [JUnit5](https://junit.org) is adopted for modular testing, and [Selenoid](https://aerokube.com/selenoid/) facilitates remote test execution.
 
-Within the [Jenkins](https://www.jenkins.io/) job, an [Allure report](https://allurereport.org/) is generated, and the results are communicated to [Telegram](https://web.telegram.org/) through a dedicated bot. The testing environment also integrates seamlessly with [Allure TestOps](https://qameta.io/) and [Jira](https://www.atlassian.com/software/jira) for comprehensive test management and issue tracking.
+In the <code>[Jenkins](https://www.jenkins.io/)</code> task, an <code>[Allure report](https://allurereport.org/)</code> is generated, and a notification is sent to <code>[Telegram](https://web.telegram.org/)</code> using a dedicated bot. 
+The testing environment also connects smoothly with <code>[Allure TestOps](https://qameta.io/)</code> and <code>[Jira](https://www.atlassian.com/software/jira)</code> for complete test management and issue tracking.
+It offers both local and remote test execution capabilities and utilizes the "<code>Page Object</code>" design pattern.
 
 The Allure report for each test includes:
 - Test steps and their execution results
@@ -49,12 +50,12 @@ ____
 ## :male_detective: Test Cases
 
 Automated:
-- Check top menu options in any language (Parametrized)
+- Check currency exchange calculator tests (Both sell and buy) 
+- Check IBAN checker
+- Check top menu options in available languages (Parametrized)
 - Check company logo exist and verifies href in any language (Parametrized) 
-- Check Internet bank login button exists and verifies href in any language (Parametrized)
+- Check Internet bank login button exists and verifies href in available languages (Parametrized)
 - Check that 'scroll to top' element appears by scrolling page down
-- Check that overdraft section contains apply button and verify it in any language (Parametrized)
-
 Manual:
 - Check main menu images are uploaded
 - Check button style (color and hover/click effects)
@@ -64,26 +65,21 @@ Manual:
 ____
 ## :arrow_forward: Running Automated Tests
 
-### Running Tests from the Terminal
+### Running Tests from the Terminal:
 
-#### Local execution. From the project's root directory, run:
-
-<em> To run <b>all</b> the tests: </em>
-
-```
-gradle clean test 
-```
-<em> To run all the tests tagged as <b>"menu_test"</b>:</em>
-
-```
-gradle clean menu_test
+To run the automated tests locally:
+```bash
+gradle clean test -Denv='local'
 ```
 
-<em> To runs all the tests tagged as <b>"main_test"</b>: </em>
-
+To run the automated tests on Selenoid:
+```bash
+gradle clean test -Denv='remote'  
 ```
-gradle clean main_test
-```
+>**Note:** The following method will run the tests with the following default parameters:
+>+ Remote Url: **selenoid.autotests.cloud**
+>+ Browser: **Google Chrome**
+>+ Browser version: **100.0**
 ____
 <a id="jenkins"></a>
 ## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins Build <a target="_blank"> </a>
@@ -101,7 +97,8 @@ To start the build, go to the "Build with parameters" section, select the necess
 <p align="center">
 <img title="Jenkins Build" src="media/screenshots/Jenkins.png">
 </p>
-After the build is completed, icons for "Allure Report" and "Allure TestOps" will appear next to the build number in the "Build History" section. Clicking on these icons opens pages with the generated HTML report and test documentation, respectively.
+
+**Note:** After the build is completed, icons for "Allure Report" and "Allure TestOps" will appear next to the build number in the "Build History" section. Clicking on these icons opens pages with the generated HTML report and test documentation, respectively.
 
 ____
 <a id="allureReport"></a>
