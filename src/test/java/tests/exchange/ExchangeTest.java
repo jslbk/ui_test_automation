@@ -1,7 +1,6 @@
 package tests.exchange;
 
 import data.RunTags;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -19,10 +18,9 @@ public class ExchangeTest extends TestBase {
     @Test
     @DisplayName("Check exchange SELL calculations are correct")
     public void exchangeCalculationsSellTest() {
+        step("Open exchange rates page by Url", exchangePage::openExchangeRatesPage);
         String bankSellsRate = exchangePage.getBankSellsRateInEurByCurrency("GBP");
         String sellAmount = "123.45";
-
-        step("Open exchange rates page by Url", exchangePage::openExchangeRatesPage);
         step("Set currency to SELL and click submit button", () ->
                 exchangePage.setSellAmount(sellAmount)
                         .selectSellCurrency("GBP")
@@ -34,10 +32,9 @@ public class ExchangeTest extends TestBase {
     @Test
     @DisplayName("Check exchange BUY calculations are correct")
     public void exchangeCalculationsBuyTest() {
+        step("Open exchange rates page by Url", exchangePage::openExchangeRatesPage);
         String bankBuysRate = exchangePage.getBankBuysRateInEurByCurrency("CZK");
         String buyAmount = "123.45";
-
-        step("Open exchange rates page by Url", exchangePage::openExchangeRatesPage);
         step("Set currency to BUY and click submit button", () ->
                 exchangePage.setBuyAmount(buyAmount)
                         .selectBuyCurrency("CZK")

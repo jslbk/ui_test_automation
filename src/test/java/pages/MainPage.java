@@ -18,8 +18,7 @@ public class MainPage {
             internetBankButtonLocator = $(".i-internetbank"),
             logoLocator = $(".i-logo"),
             languagePickerLocator = $("#languages"),
-            scrollToTopElementLocator = $(".scrollToTop"),
-            overdraftSectionLocator = $(".widget-block-11");
+            scrollToTopElementLocator = $(".scrollToTop");
 
     public SelenideElement getTopMenuLanguagePicker() {
         return languagePickerLocator;
