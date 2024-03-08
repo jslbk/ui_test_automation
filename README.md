@@ -1,7 +1,7 @@
 # Demo automation tests for the [BluOr Bank's](https://www.bluorbank.lv/) web application
 
 
-<img alt="BluOr Bank" src="media/logos/bob_logo.png" width="60%">
+<img alt="BluOr Bank" src="media/logos/bob_logo.png" width="100%">
 
 ## 📂 Content:
 
