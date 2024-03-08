@@ -102,10 +102,14 @@ To start the build, go to the "Build with parameters" section, select the necess
 
 ____
 <a id="allureReport"></a>
-## <img width="4%" style="vertical-align:bottom" title="Allure Report" src="media/icons/Allure_Report.svg"> </a> Example of <a target="_blank" href="https://jenkins.autotests.cloud/job/bob_autotests/20/"> Allure Report </a>
+## <img width="4%" style="vertical-align:bottom" title="Allure Report" src="media/icons/Allure_Report.svg"> </a> Example of <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/5/"> Allure Report </a>
 
 <p align="center">
 <img title="Allure Overview" src="media/screenshots/Allure.png">
+</p>
+
+<p align="center">
+<img title="Allure Graphs" src="media/screenshots/AllureGraphs.png">
 </p>
 
 ____
@@ -118,9 +122,13 @@ On the *Dashboard* in **Allure TestOps**, you can see the statistics of the numb
 <img title="Allure TestOps DashBoard" src="media/screenshots/AllureTestOps.png">
 </p>
 
+<p align="center">
+<img title="Allure TestOps DashBoard" src="media/screenshots/AllureTestOpsDash.png">
+</p>
+
 ____
 <a id="jira"></a>
-## <img width="4%" style="vertical-align:bottom" title="Jira" src="media/icons/Jira.svg"> </a> Integration with <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1042"> Jira </a>
+## <img width="4%" style="vertical-align:bottom" title="Jira" src="media/icons/Jira.svg"> </a> Integration with <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1155"> Jira </a>
 
 Integration with **Allure TestOps** and **Jira** is implemented. In the Jira task, you can see which test cases were written as part of the task and their execution results.
 
@@ -135,7 +143,7 @@ ____
 After the build is complete, a **Telegram** bot automatically processes and sends a message with the test run report to a specifically configured chat.
 
 <p align="left">
-<img width="40%" title="Telegram Notifications" src="media/screenshots/TelegramBot.png">
+<img width="30%" title="Telegram Notifications" src="media/screenshots/TelegramBot.png">
 </p>
 
 ____
