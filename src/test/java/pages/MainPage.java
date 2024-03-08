@@ -6,7 +6,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.texts;
@@ -21,12 +20,12 @@ public class MainPage {
             logoLocator = $(".i-logo"),
             languagePickerLocator = $("#languages"),
             scrollToTopElementLocator = $(".scrollToTop"),
-            pageTitle = $("Business banking made better");
+            pageTitle = $("h1 span");
 
     @Step("Open Main page")
     public void openMainPage() {
         open(Configuration.baseUrl);
-        pageTitle.shouldHave(text("Payments"), Duration.ofSeconds(10));
+        pageTitle.shouldHave(text("Business banking made better"));
     }
 
     public SelenideElement getTopMenuLanguagePicker() {

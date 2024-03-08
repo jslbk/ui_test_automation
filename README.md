@@ -50,7 +50,7 @@ ____
 ## :male_detective: Test Cases
 
 Automated:
-- Check currency exchange calculator tests (Both sell and buy) 
+- Check currency exchange calculator (Both sell and buy) 
 - Check IBAN checker
 - Check top menu options in available languages (Parametrized)
 - Check company logo exist and verifies href in any language (Parametrized) 
