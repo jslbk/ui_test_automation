@@ -98,7 +98,7 @@ To start the build, go to the "Build with parameters" section, select the necess
 <img title="Jenkins Build" src="media/screenshots/Jenkins.png">
 </p>
 
-**Note:** After the build is completed, icons for "Allure Report" and "Allure TestOps" will appear next to the build number in the "Build History" section. Clicking on these icons opens pages with the generated HTML report and test documentation, respectively.
+> After the build is completed, icons for "Allure Report" and "Allure TestOps" will appear next to the build number in the "Build History" section. Clicking on these icons opens pages with the generated HTML report and test documentation, respectively.
 
 ____
 <a id="allureReport"></a>
