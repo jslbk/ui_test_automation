@@ -1,4 +1,4 @@
-# Demo automation tests for the [BluOr Bank's](https://www.bluorbank.lv/) web application
+# Demo ui-automation tests for the [BluOr Bank's](https://www.bluorbank.lv/)
 
 
 <img alt="BluOr Bank" src="media/logos/bob_logo.png" width="100%">
