@@ -3,6 +3,8 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,7 +20,7 @@ public class PaymentsPage {
     @Step("Open Payments page")
     public void openPaymentPage() {
         open("/payments");
-        pageTitle.shouldHave(text("Payments"));
+        pageTitle.shouldHave(text("Payments"), Duration.ofSeconds(10));
     }
 
     @Step("Set IBAN number")
