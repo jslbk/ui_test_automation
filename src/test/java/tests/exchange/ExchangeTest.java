@@ -16,17 +16,13 @@ import static io.qameta.allure.Allure.step;
 public class ExchangeTest extends TestBase {
     private final ExchangeRatesPage exchangePage = new ExchangeRatesPage();
 
-    @BeforeEach
-    void openExchangePage() {
-        exchangePage.openExchangeRatesPage();
-    }
-
     @Test
     @DisplayName("Check exchange SELL calculations are correct")
     public void exchangeCalculationsSellTest() {
         String bankSellsRate = exchangePage.getBankSellsRateInEurByCurrency("GBP");
         String sellAmount = "123.45";
 
+        step("Open exchange rates page by Url", exchangePage::openExchangeRatesPage);
         step("Set currency to SELL and click submit button", () ->
                 exchangePage.setSellAmount(sellAmount)
                         .selectSellCurrency("GBP")
@@ -41,6 +37,7 @@ public class ExchangeTest extends TestBase {
         String bankBuysRate = exchangePage.getBankBuysRateInEurByCurrency("CZK");
         String buyAmount = "123.45";
 
+        step("Open exchange rates page by Url", exchangePage::openExchangeRatesPage);
         step("Set currency to BUY and click submit button", () ->
                 exchangePage.setBuyAmount(buyAmount)
                         .selectBuyCurrency("CZK")
