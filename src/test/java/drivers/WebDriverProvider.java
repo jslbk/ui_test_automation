@@ -1,9 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import config.WebDriverConfig;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -27,7 +25,5 @@ public class WebDriverProvider {
             ));
             Configuration.browserCapabilities = capabilities;
         }
-
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 }
