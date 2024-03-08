@@ -20,7 +20,7 @@ public class PaymentsTest extends TestBase {
 
     @BeforeEach
     void openPaymentPageByUrl() {
-        step("Open payments page by Url", paymentsPage::openPaymentPage);
+        step("Open Payments page by Url", paymentsPage::openPaymentPage);
         acceptCookiesIfNeeded();
     }
 

@@ -3,6 +3,7 @@ package tests.components;
 import com.codeborne.selenide.Configuration;
 import data.Language;
 import data.RunTags;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,6 +21,12 @@ import static io.qameta.allure.Allure.step;
 @Tag(RunTags.MENU)
 public class TopMenuTest extends TestBase {
 
+    @BeforeEach
+    void openPaymentPageByUrl() {
+        step("Open Main page by Url", mainPage::openMainPage);
+        acceptCookiesIfNeeded();
+    }
+
     public static Stream<Arguments> getTopMenuOptionsInAllLanguages() {
         return Stream.of(
                 Arguments.of(Language.EN, List.of("Banking services", "Loans", "E-commerce", "Investments", "Contacts and support", "For investors")),
@@ -31,12 +38,10 @@ public class TopMenuTest extends TestBase {
     @MethodSource("getTopMenuOptionsInAllLanguages")
     @ParameterizedTest(name = "Set language {0} and check top menu options are {1}")
     void checkTopMenuOptionsInAnyLanguage(Language language, List<String> topMenuButtons) {
-        step("Select language", () -> {
-            mainPage.selectLanguage(language.getLanguage());
-        });
-        step("Verify top menu options", () -> {
-            mainPage.verifyTopMenuOptions(topMenuButtons);
-        });
+        step("Select language", () ->
+                mainPage.selectLanguage(language.getLanguage()));
+        step("Verify top menu options", () ->
+                mainPage.verifyTopMenuOptions(topMenuButtons));
     }
 
     private static Stream<Arguments> getTopMenuLogoHrefInAllLanguages() {

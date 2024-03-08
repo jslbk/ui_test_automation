@@ -1,6 +1,7 @@
 package tests.components;
 
 import data.RunTags;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,6 +14,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Tag(RunTags.MAIN)
 public class ScrollToTopElementTest extends TestBase {
 
+    @BeforeEach
+    void openPaymentPageByUrl() {
+        step("Open Main page by Url", mainPage::openMainPage);
+        acceptCookiesIfNeeded();
+    }
     @Test
     void scrollDownAndCheckBackToTopElementIsDisplayed() {
         step("Scroll down and check element is visible", () ->

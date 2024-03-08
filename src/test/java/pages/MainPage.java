@@ -1,10 +1,12 @@
 package pages;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.texts;
@@ -18,7 +20,14 @@ public class MainPage {
             internetBankButtonLocator = $(".i-internetbank"),
             logoLocator = $(".i-logo"),
             languagePickerLocator = $("#languages"),
-            scrollToTopElementLocator = $(".scrollToTop");
+            scrollToTopElementLocator = $(".scrollToTop"),
+            pageTitle = $("Business banking made better");
+
+    @Step("Open Main page")
+    public void openMainPage() {
+        open(Configuration.baseUrl);
+        pageTitle.shouldHave(text("Payments"), Duration.ofSeconds(10));
+    }
 
     public SelenideElement getTopMenuLanguagePicker() {
         return languagePickerLocator;
