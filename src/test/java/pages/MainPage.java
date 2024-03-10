@@ -15,16 +15,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
-    private final SelenideElement burgerMenuLocator = $("[for=drop-down-cbox]"),
-            internetBankButtonLocator = $(".i-internetbank"),
-            logoLocator = $(".i-logo"),
-            languagePickerLocator = $("#languages"),
-            scrollToTopElementLocator = $(".scrollToTop"),
-            pageTitle = $("h1 span");
+    private final SelenideElement burgerMenuLocator = $("[for=drop-down-cbox]"), internetBankButtonLocator = $(".i-internetbank"), logoLocator = $(".i-logo"), languagePickerLocator = $("#languages"), pageTitle = $("h1 span");
 
     @Step("Open Main page")
     public void openMainPage() {
-        open(Configuration.baseUrl);
+        open(Configuration.baseUrl + "/en");
         pageTitle.shouldHave(text("Business banking made better"));
     }
 
@@ -38,10 +33,6 @@ public class MainPage {
 
     public SelenideElement getTopMenuLogo() {
         return logoLocator;
-    }
-
-    public SelenideElement getBackToTopElement() {
-        return scrollToTopElementLocator;
     }
 
     public void selectLanguage(String language) {
@@ -70,11 +61,6 @@ public class MainPage {
             getBurgerMenuElement().click();
         }
         getTopMenuOptions().filter(visible).shouldHave(texts(topMenuButtons));
-    }
-
-    @Step("Scroll down")
-    public void scrollDown() {
-        Selenide.executeJavaScript("window.scrollBy(0, 500);");
     }
 
 }

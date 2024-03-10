@@ -14,8 +14,8 @@ import tests.TestBase;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static com.codeborne.selenide.CollectionCondition.texts;
 import static io.qameta.allure.Allure.step;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Check top menu options tests")
 @Tag(RunTags.MENU)
@@ -23,7 +23,8 @@ public class TopMenuTest extends TestBase {
 
     @BeforeEach
     void openPaymentPageByUrl() {
-        step("Open Main page by Url", mainPage::openMainPage);
+        step("Open Main page by Url", () ->
+                mainPage.openMainPage());
         acceptCookiesIfNeeded();
     }
 
@@ -47,9 +48,9 @@ public class TopMenuTest extends TestBase {
 
     private static Stream<Arguments> getTopMenuLogoHrefInAllLanguages() {
         return Stream.of(
-                Arguments.of(Language.EN, Configuration.baseUrl + "en"),
-                Arguments.of(Language.LV, Configuration.baseUrl + "lv"),
-                Arguments.of(Language.RU, Configuration.baseUrl + "ru")
+                Arguments.of(Language.EN, Configuration.baseUrl + "/en"),
+                Arguments.of(Language.LV, Configuration.baseUrl + "/lv"),
+                Arguments.of(Language.RU, Configuration.baseUrl + "/ru")
         );
     }
 
@@ -58,10 +59,10 @@ public class TopMenuTest extends TestBase {
     @ParameterizedTest(name = "Set language {0} and check logo href is {1}")
     void checkTopMenuLogoIsDisplayedAndVerifyHrefInAvailableLanguagesTest(Language language, String logoHref) {
         step("Select language", () -> mainPage.selectLanguage(language.getLanguage()));
-        step("Verify top menu options", () -> {
-            mainPage.getTopMenuLogo().$("a").getAttribute("href").equals(texts(logoHref));
-        });
+        step("Verify top menu options", () ->
+                assertEquals(logoHref, mainPage.getTopMenuLogo().$("a").getAttribute("href")));
     }
+
 
     private static Stream<Arguments> getTopMenuInternetBankLoginButtonInAvailableLanguages() {
         return Stream.of(
@@ -77,8 +78,8 @@ public class TopMenuTest extends TestBase {
     void checkTopMenuInternetBankLoginButtonIsDisplayedAndVerifyItHrefAndNameInAvailableLanguagesTest(Language language, String name, String ibHref) {
         step("Select language", () -> mainPage.selectLanguage(language.getLanguage()));
         step("Verify top menu options", () -> {
-            mainPage.getInternetBankLoginButton().getAttribute("href").equals(texts(ibHref));
-            mainPage.getInternetBankLoginButton().getText().equals(texts(name));
+            assertEquals(ibHref, mainPage.getInternetBankLoginButton().getAttribute("href"));
+            assertEquals(name, mainPage.getInternetBankLoginButton().getText());
         });
     }
 }

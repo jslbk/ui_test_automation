@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class TestBase {
 
-    public MainPage mainPage = new MainPage();
+    public final MainPage mainPage = new MainPage();
 
     @BeforeAll
     static void beforeAll() {

@@ -17,7 +17,7 @@ public class PaymentsPage {
 
     @Step("Open Payments page")
     public void openPaymentPage() {
-        open("/payments");
+        open("/en/payments");
         pageTitle.shouldHave(text("Payments"));
     }
 

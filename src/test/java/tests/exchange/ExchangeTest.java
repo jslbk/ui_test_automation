@@ -18,7 +18,8 @@ public class ExchangeTest extends TestBase {
 
     @BeforeEach
     void openPaymentPageByUrl() {
-        step("Open Exchange rates page by Url", exchangePage::openExchangeRatesPage);
+        step("Open Exchange rates page by Url", () ->
+                exchangePage.openExchangeRatesPage());
         acceptCookiesIfNeeded();
     }
 

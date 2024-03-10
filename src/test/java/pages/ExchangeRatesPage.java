@@ -25,7 +25,7 @@ public class ExchangeRatesPage {
 
     @Step("Open Exchange rates page")
     public void openExchangeRatesPage() {
-        open("/exchange-rates");
+        open("/en/exchange-rates");
         pageTitle.shouldHave(text("Exchange rates"));
     }
 
