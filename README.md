@@ -84,7 +84,7 @@ ____
 <a id="jenkins"></a>
 ## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins Build <a target="_blank"> </a>
 
-Registration on the [Jenkins](https://jenkins.autotests.cloud/) resource is required for access to Jenkins.
+> Registration on the [Jenkins](https://jenkins.autotests.cloud/) resource is required for access to Jenkins.
 
 To start the build, go to the "Build with parameters" section, select the necessary parameters, and click "Build".
 ### Jenkins Build Parameters:
