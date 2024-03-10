@@ -102,7 +102,7 @@ To start the build, go to the "Build with parameters" section, select the necess
 
 ____
 <a id="allureReport"></a>
-## <img width="4%" style="vertical-align:bottom" title="Allure Report" src="media/icons/Allure_Report.svg"> </a> Example of <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/5/"> Allure Report </a>
+## <img width="4%" style="vertical-align:bottom" title="Allure Report" src="media/icons/Allure_Report.svg"> </a> Example of <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/lastBuild/"> Allure Report </a>
 
 <p align="center">
 <img title="Allure Overview" src="media/screenshots/Allure.png">
