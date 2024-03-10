@@ -82,7 +82,7 @@ gradle clean test -Denv='remote'
 >+ Browser version: **100.0**
 ____
 <a id="jenkins"></a>
-## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins Build <a target="_blank"> </a>
+## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/"> Build </a>
 
 > Registration on the [Jenkins](https://jenkins.autotests.cloud/) resource is required for access to Jenkins.
 
