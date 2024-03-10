@@ -153,5 +153,5 @@ ____
 In the Allure reports for each test, a video of the test execution is attached along with a screenshot.
 
 <p align="center">
-  <img title="Selenoid attachment" src="media/screenshots/Video.gif">
+  <img width="100%" title="Selenoid attachment" src="media/screenshots/Video.gif">
 </p>
