@@ -76,7 +76,7 @@ public class TopMenuTest extends TestBase {
         step("Select language", () -> mainPage.selectLanguage(language.getLanguage()));
         step("Verify top menu options", () -> {
             assertEquals(ibHref, mainPage.getInternetBankLoginButton().getAttribute("href"));
-            assertEquals(name, mainPage.getInternetBankLoginButton().getText());
+            assertEquals(name, mainPage.getInternetBankLoginButton().getAttribute("text"));
         });
     }
 }
