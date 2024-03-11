@@ -57,12 +57,6 @@ task menu_test(type: Test) {
     }
 }
 
-task main_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("main_test")
-    }
-}
-
 task payments_test(type: Test) {
     useJUnitPlatform {
         includeTags("payments_test")

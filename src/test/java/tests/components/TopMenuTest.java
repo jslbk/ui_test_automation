@@ -24,7 +24,7 @@ public class TopMenuTest extends TestBase {
     @BeforeEach
     void openPaymentPageByUrl() {
         step("Open Main page by Url", () ->
-                mainPage.openMainPage());
+                    mainPage.openMainPage());
         acceptCookiesIfNeeded();
     }
 
