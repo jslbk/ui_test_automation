@@ -37,7 +37,6 @@ public class TopMenuTest extends TestBase {
     }
 
     @MethodSource("getTopMenuOptionsInAllLanguages")
-    @DisplayName("Check available top menu options")
     @ParameterizedTest(name = "Set language {0} and check top menu options are {1}")
     void checkTopMenuOptionsInAvailableLanguagesTest(Language language, List<String> topMenuButtons) {
         step("Select language", () ->
@@ -55,7 +54,6 @@ public class TopMenuTest extends TestBase {
     }
 
     @MethodSource("getTopMenuLogoHrefInAllLanguages")
-    @DisplayName("Check top menu logo link")
     @ParameterizedTest(name = "Set language {0} and check logo href is {1}")
     void checkTopMenuLogoIsDisplayedAndVerifyHrefInAvailableLanguagesTest(Language language, String logoHref) {
         step("Select language", () -> mainPage.selectLanguage(language.getLanguage()));
@@ -66,14 +64,13 @@ public class TopMenuTest extends TestBase {
 
     private static Stream<Arguments> getTopMenuInternetBankLoginButtonInAvailableLanguages() {
         return Stream.of(
-                Arguments.of(Language.EN, "Internet bank", "https://ib.bluorbank.lv/x/login?language=en"),
+                Arguments.of(Language.EN, "Internet Bank", "https://ib.bluorbank.lv/x/login?language=en"),
                 Arguments.of(Language.LV, "Internetbanka", "https://ib.bluorbank.lv/x/login?language=lv"),
                 Arguments.of(Language.RU, "Интернет-Банк", "https://ib.bluorbank.lv/x/login?language=ru")
         );
     }
 
     @MethodSource("getTopMenuInternetBankLoginButtonInAvailableLanguages")
-    @DisplayName("Check top menu Internet bank button link")
     @ParameterizedTest(name = "Set language {0} and check login to internet bank button name is {1} and href is {2}")
     void checkTopMenuInternetBankLoginButtonIsDisplayedAndVerifyItHrefAndNameInAvailableLanguagesTest(Language language, String name, String ibHref) {
         step("Select language", () -> mainPage.selectLanguage(language.getLanguage()));

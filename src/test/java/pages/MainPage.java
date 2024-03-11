@@ -15,7 +15,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
 
-    private final SelenideElement burgerMenuLocator = $("[for=drop-down-cbox]"), internetBankButtonLocator = $(".i-internetbank"), logoLocator = $(".i-logo"), languagePickerLocator = $("#languages"), pageTitle = $("h1 span");
+    private final SelenideElement burgerMenuLocator = $("[for=drop-down-cbox]"),
+            internetBankButtonLocator = $(".i-internetbank"),
+            logoLocator = $(".i-logo"),
+            languagePickerLocator = $("#languages"),
+            pageTitle = $("h1 span");
 
     @Step("Open Main page")
     public void openMainPage() {
