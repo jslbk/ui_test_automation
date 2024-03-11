@@ -66,7 +66,7 @@ public class TopMenuTest extends TestBase {
 
     private static Stream<Arguments> getTopMenuInternetBankLoginButtonInAvailableLanguages() {
         return Stream.of(
-                Arguments.of(Language.EN, "Internet bank", "htps://ib.bluorbank.lv/x/login?language=en"),
+                Arguments.of(Language.EN, "Internet bank", "https://ib.bluorbank.lv/x/login?language=en"),
                 Arguments.of(Language.LV, "Internetbanka", "https://ib.bluorbank.lv/x/login?language=lv"),
                 Arguments.of(Language.RU, "Интернет-Банк", "https://ib.bluorbank.lv/x/login?language=ru")
         );
