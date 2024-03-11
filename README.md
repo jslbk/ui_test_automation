@@ -55,7 +55,6 @@ Automated:
 - Check top menu options in available languages (Parametrized)
 - Check company logo exist and verifies href in any language (Parametrized) 
 - Check Internet bank login button exists and verifies href in available languages (Parametrized)
-- Check that 'scroll to top' element appears by scrolling page down
 Manual:
 - Check main menu images are uploaded
 - Check button style (color and hover/click effects)
