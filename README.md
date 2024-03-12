@@ -33,7 +33,6 @@ ____
 </p>
 
 ____
-
 In the <code>[Jenkins](https://www.jenkins.io/)</code> task, an <code>[Allure report](https://allurereport.org/)</code> is generated, and a notification is sent to <code>[Telegram](https://web.telegram.org/)</code> using a dedicated bot. 
 The testing environment also connects smoothly with <code>[Allure TestOps](https://qameta.io/)</code> and <code>[Jira](https://www.atlassian.com/software/jira)</code> for complete test management and issue tracking.
 It offers both local and remote test execution capabilities and utilizes the "<code>Page Object</code>" design pattern.
@@ -56,10 +55,6 @@ Automated:
 - Check company logo exist and verifies href in any language (Parametrized) 
 - Check Internet bank login button exists and verifies href in available languages (Parametrized)
 - Check that 'scroll to top' element appears by scrolling page down
-Manual:
-- Check main menu images are uploaded
-- Check button style (color and hover/click effects)
-- Check font size and style
 
 <a id="autotests"></a>
 ____
@@ -82,7 +77,7 @@ gradle clean test -Denv='remote'
 >+ Browser version: **100.0**
 ____
 <a id="jenkins"></a>
-## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/"> Build </a>
+## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/allure/"> Build </a>
 
 > Registration on the [Jenkins](https://jenkins.autotests.cloud/) resource is required for access to Jenkins.
 

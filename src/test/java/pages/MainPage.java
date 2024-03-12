@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -23,7 +22,7 @@ public class MainPage {
 
     @Step("Open Main page")
     public void openMainPage() {
-        open(Configuration.baseUrl + "/en");
+        open("/en");
         pageTitle.shouldHave(text("Business banking made better"));
     }
 

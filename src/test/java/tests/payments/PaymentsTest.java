@@ -22,7 +22,6 @@ public class PaymentsTest extends TestBase {
     void openPaymentPageByUrl() {
         step("Open Payments page by Url", () ->
                 paymentsPage.openPaymentPage());
-        acceptCookiesIfNeeded();
     }
 
     @Test

@@ -2,7 +2,9 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
+        "system:properties",
         "classpath:${env}.properties",
 })
 public interface WebDriverConfig extends Config {
@@ -27,5 +29,9 @@ public interface WebDriverConfig extends Config {
 
     @DefaultValue("false")
     Boolean isRemote();
+
+    @Key("consentCookieValue")
+    @DefaultValue("07ed8f97-cedf-ee11-ab66-00505689f2e4")
+    String getBankConsentCookieValue();
 
 }

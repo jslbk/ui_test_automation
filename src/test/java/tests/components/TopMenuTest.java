@@ -25,7 +25,6 @@ public class TopMenuTest extends TestBase {
     void openPaymentPageByUrl() {
         step("Open Main page by Url", () ->
                     mainPage.openMainPage());
-        acceptCookiesIfNeeded();
     }
 
     public static Stream<Arguments> getTopMenuOptionsInAllLanguages() {

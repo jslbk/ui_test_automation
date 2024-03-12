@@ -14,13 +14,13 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("Check currency calculator tests")
 @Tag(RunTags.EXCHANGE)
 public class ExchangeTest extends TestBase {
+
     private final ExchangeRatesPage exchangePage = new ExchangeRatesPage();
 
     @BeforeEach
     void openPaymentPageByUrl() {
         step("Open Exchange rates page by Url", () ->
                 exchangePage.openExchangeRatesPage());
-        acceptCookiesIfNeeded();
     }
 
     @Test

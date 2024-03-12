@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.WebDriverProvider;
 import helpers.Attachments;
@@ -9,22 +10,19 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.Cookie;
 import pages.MainPage;
 
-import java.time.Duration;
-
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
     public final MainPage mainPage = new MainPage();
 
     @BeforeAll
-    static void beforeAll() {
+    static void setUp() {
         WebDriverProvider.setConfig();
+        addBankConsentCookie();
     }
 
     @BeforeEach
@@ -33,13 +31,11 @@ public class TestBase {
     }
 
     @Step
-    public void acceptCookiesIfNeeded() {
-        try {
-            $("#GDPR-modal").shouldBe(visible, Duration.ofSeconds(10));
-            $("#allowAllGDPR").click();
-        } catch (NoSuchElementException | TimeoutException e) {
-            System.out.println("Modal pop-up not found or did not appear within the specified time.");
-        }
+    public static void addBankConsentCookie() {
+        open("/favicon.ico");
+
+        Cookie consentCookie = new Cookie("Bank.Consent.Cookie", WebDriverProvider.config.getBankConsentCookieValue());
+        WebDriverRunner.getWebDriver().manage().addCookie(consentCookie);
     }
 
     @AfterEach
