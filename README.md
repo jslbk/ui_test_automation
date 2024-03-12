@@ -46,9 +46,8 @@ The Allure report for each test includes:
 
 ____
 <a id="cases"></a>
-## :male_detective: Test Cases
+## 🗒 Test Cases
 
-Automated:
 - Check currency exchange calculator (Both sell and buy) 
 - Check IBAN checker
 - Check top menu options in available languages (Parametrized)
