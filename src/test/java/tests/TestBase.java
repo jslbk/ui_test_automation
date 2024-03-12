@@ -22,12 +22,12 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         WebDriverProvider.setConfig();
-        addBankConsentCookie();
     }
 
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        addBankConsentCookie();
     }
 
     @Step
