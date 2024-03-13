@@ -76,9 +76,7 @@ gradle clean test -Denv='remote'
 >+ Browser version: **100.0**
 ____
 <a id="jenkins"></a>
-## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/allure/"> Build </a>
-
-> Registration on the [Jenkins](https://jenkins.autotests.cloud/) resource is required for access to Jenkins.
+## <img width="4%" style="vertical-align:bottom" title="Jenkins" src="media/icons/Jenkins.svg"> </a> Jenkins <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/lastBuild/"> Build </a>
 
 To start the build, go to the "Build with parameters" section, select the necessary parameters, and click "Build".
 ### Jenkins Build Parameters:
@@ -96,7 +94,7 @@ To start the build, go to the "Build with parameters" section, select the necess
 
 ____
 <a id="allureReport"></a>
-## <img width="4%" style="vertical-align:bottom" title="Allure Report" src="media/icons/Allure_Report.svg"> </a> Example of <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/lastBuild/"> Allure Report </a>
+## <img width="4%" style="vertical-align:bottom" title="Allure Report" src="media/icons/Allure_Report.svg"> </a> Example of <a target="_blank" href="https://jenkins.autotests.cloud/job/ui_test_automation_project/allure/"> Allure Report </a>
 
 <p align="center">
 <img title="Allure Overview" src="media/screenshots/Allure.png">
